@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @* include free template css *@
+    <link href="~/Content/UserLayoutCss/fonts.css" rel="stylesheet" />
+    <link href="~/Content/UserLayoutCss/screen.css" rel="stylesheet" />
+    @* include override css *@
+    <link href="~/Content/UserLayoutCss/UserCss.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderBody()
+    <section class="blank">
+
+        @* register *@
+        <div class="flash">
+            <div class="user-register-login">
+                @Html.ActionLink("Register", "Register", null, htmlAttributes: new { @class="register"})
+                @Html.ActionLink("Login", "Login", null, htmlAttributes: new { @class="login"})
+                
+            </div>
+        </div>
+
+        @* menu *@
+        <div class="flash success" id="nav-menu">
+            <div class="search">
+                @using (Html.BeginForm())
+                {
+                    @Html.TextBox("txtSearch", "", htmlAttributes: new {@class="searchBox", @placeholder="book..."})
+                    <button type="submit">Search</button>
+                }
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Introduce</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Guide</a></li>
+                <li><a href="#">Book</a></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="activity">
+            <h1 class="item-header">Recent Activity</h1>
+            <div class="activity-list-update">
+                <img src="http://lorempixel.com/50/50/" alt="Image">
+                <p><strong>Dennis The Dude</strong> updated his <a href="#">user profile</a>.</p>
+                <div class="clear"></div>
+            </div>
+            <div class="activity-list-update">
+                <img src="http://lorempixel.com/50/50/" alt="Image">
+                <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
+                <div class="clear"></div>
+            </div>
+            <div class="activity-list-update">
+                <img src="http://lorempixel.com/50/50/" alt="Image">
+                <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
+                <div class="clear"></div>
+            </div>
+            <a href="#" class="item-footer green">
+                See all activity
+            </a>
+        </div>
+    </section>
+    <section>
+        <div>
+            <a href="#" class="button">This is a button</a>
+            <a href="#" class="button button-submit">This is a save button</a>
+            <a href="#" class="button">Button with a counter <span class="notification">22</span></a>
+            <a href="#" class="button button-and-icon">
+                <div><i class="icon-large icon-cog"></i></div>Button with an icon
+            </a>
+        </div>
+        <hr>
+        <div>
+            <a href="#" class="button button-submit">Submit</a>
+            <a href="#" class="button button-cancel">Cancel</a>
+            <a href="#" class="button button-delete">Delete</a>
+        </div>
+        <hr>
+
+        <div>
+            <a href="#" class="button button-small">Smaller button</a>
+        </div>
+    </section>
+    <section class="blank items">
+        <div class="item">
+            <img src="http://lorempixel.com/400/300/" alt="Image">
+
+            <div class="item-info">
+                <h1>Item title</h1>
+                <p>What the hell is this? Get out of town, I didn't know you did anything creative. Ah, let me read some.</p>
+                <span class="price">£49.99</span>
+                <a href="#" class="button button-buy">Get it now</a>
+            </div>
+        </div>
+        <div>
+            <a href="#" class="button button-buy">Buy button (full width for columns)</a>
+        </div>
+    </section>
+</body>
+</html>
